@@ -1,5 +1,6 @@
 const userNameSubmitBtn = document.querySelector("#btn");
 const userInput = document.querySelector("#userName");
+const welcomeText = document.querySelector(".welcome");
 
 userNameSubmitBtn.disabled = true;
 
@@ -16,10 +17,7 @@ function checkName() {
 userInput.addEventListener("input", checkName);
 
 userNameSubmitBtn.addEventListener("click", (getName) => {
-    const welcomeText = document.querySelector(".welcome");
-    const yourName = document.querySelector("#userName").value;
-    welcomeText.innerHTML = `Welcome ${yourName} !`;
-    
-    userInput.value= "";
-    checkName();
+
+    welcomeText.textContent = `Welcome ${userInput.value} !`;
+    userInput.value = "";
 });
