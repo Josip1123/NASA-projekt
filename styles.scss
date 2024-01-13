@@ -1,0 +1,27 @@
+@import "reset";
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 200px;
+    height: 100vh;
+    .username-submit{
+        display: flex;
+        flex-direction: column;
+        #btn{
+            color: white;
+            background-color: black;
+            height: 2rem;
+            border-radius: .625rem;
+            margin-top: 3.125rem;
+        }
+    }
+}
+
+.disabled{
+    background-color: grey;
+    color: black;
+    opacity: 0.5;
+}
