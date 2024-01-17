@@ -19,14 +19,18 @@ video {
 }
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   margin: 0 auto;
-  max-width: 200px;
+  max-width: 1200px;
   height: 100vh;
 }
 .wrapper .username-submit {
+  margin: 0 auto;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper .username-submit .name-wrapper {
   display: flex;
   flex-direction: column;
 }
@@ -34,8 +38,6 @@ video {
   color: white;
   background-color: black;
   height: 2rem;
-  border-radius: 0.625rem;
-  margin-top: 3.125rem;
 }
 
 .disabled {

@@ -1,13 +1,11 @@
-// SUBMIT NAME DEL
+// SUBMIT THE NAME
 
 // DOM elementer vi ska använda med submit btn
 const userNameSubmitBtn = document.querySelector("#btn");
 const userInput = document.querySelector("#userName");
 const welcomeText = document.querySelector(".welcome");
 
-userNameSubmitBtn.disabled = true; //btn ska vara disabled på default
-
-//två funktioner som jag kan använda flera gånger, DRY
+//funktioner som jag kan använda flera gånger, DRY
 function enableBtn() {
     userNameSubmitBtn.disabled = false;
     userNameSubmitBtn.classList.remove("disabled");
@@ -27,16 +25,21 @@ function checkName() {
     }
 }
 
-userInput.addEventListener("input", checkName); //funktion kollar vid varje imput om lenghten blev > 3
-
-userNameSubmitBtn.addEventListener("click", (getName) => {
-    welcomeText.textContent = `Welcome ${userInput.value} !`; //tar input value och använder den för velkomst text
+function getName() {
+    const yourName = userInput.value;
+    welcomeText.textContent = `Welcome ${yourName.charAt(0).toUpperCase()+yourName.slice(1)} !`; //tar input value och använder den för velkomst text, capitalizing bara först bokstav
     userInput.value = ""; //rensar fältet efteråt
     disableBtn(); //efter vi raderar input field btn är fortfarande enabled trots tom
-});
+}
+userInput.addEventListener("input", checkName); //funktion kollar vid varje imput om lenghten blev > 3
 
-//
-//
-//
-//
-//
+userNameSubmitBtn.addEventListener("click", getName);
+
+//litet funktion on keydown, som aktiverar submit name button om user trycker enter istället
+userInput.addEventListener("keydown", (event) => {
+    if (event.code === "Enter") {
+        event.preventDefault();
+        userNameSubmitBtn.click();
+        userInput.blur();
+    }
+});

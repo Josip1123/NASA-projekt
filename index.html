@@ -4,21 +4,34 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
         <div class="wrapper">
             <form class="username-submit" action="">
-                <label for="userName"> Whats your name? </label>
-                <input type="text" id="userName" value="" placeholder="Type here" />
-                <button type="button" id="btn" name="btn" value="Submit" class="disabled"/> Submit </button>
+                <div class="name-wrapper">
+                    <label for="userName"> Whats your name? </label>
+                    <input
+                        type="text"
+                        id="userName"
+                        value=""
+                        placeholder="Type here"
+                    />
+                </div>
+                <button
+                    type="button"
+                    id="btn"
+                    name="btn"
+                    value="Submit"
+                    class="disabled"
+                    disabled
+                >
+                <!-- button ska vara disabled från början och sen med JS ska man ädra beroende på string (name) lenght -->
+                    Submit
+                </button>
             </form>
             <h2 class="welcome"></h2>
         </div>
         <script src="main.js"></script>
     </body>
 </html>
-
-
-
-oninput="checkName()"

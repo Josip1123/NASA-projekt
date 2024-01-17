@@ -1,27 +1,38 @@
 @import "reset";
 
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+
+
+.wrapper {
     margin: 0 auto;
-    max-width: 200px;
+    max-width: 1200px;
     height: 100vh;
-    .username-submit{
+
+    .username-submit {
+        margin: 0 auto;
+        max-width: 400px;
         display: flex;
-        flex-direction: column;
-        #btn{
+        align-items: center;
+        justify-content: center;
+
+        .name-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #btn {
             color: white;
             background-color: black;
             height: 2rem;
-            border-radius: .625rem;
-            margin-top: 3.125rem;
         }
     }
 }
 
-.disabled{
+.disabled {
     background-color: grey;
     color: black;
     opacity: 0.5;
+}
+
+.dark{
+
 }
