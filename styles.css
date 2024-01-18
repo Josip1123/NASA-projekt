@@ -25,23 +25,34 @@ video {
 }
 .wrapper .username-submit {
   margin: 0 auto;
-  max-width: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.wrapper .username-submit .name-wrapper {
+  max-width: 15rem;
   display: flex;
   flex-direction: column;
 }
+.wrapper .username-submit .name-wrapper {
+  display: flex;
+}
+.wrapper .username-submit #userName {
+  flex: 0 0 70%;
+}
+.wrapper .username-submit label {
+  width: 100%;
+  text-align: center;
+}
 .wrapper .username-submit #btn {
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: yellow;
   height: 2rem;
+  flex: 0 0 30%;
 }
 
 .disabled {
   background-color: grey;
   color: black;
   opacity: 0.5;
+}
+
+.dark {
+  background-color: black;
+  color: white;
 }/*# sourceMappingURL=styles.css.map */

@@ -1,7 +1,6 @@
 @import "reset";
 
 
-
 .wrapper {
     margin: 0 auto;
     max-width: 1200px;
@@ -9,20 +8,29 @@
 
     .username-submit {
         margin: 0 auto;
-        max-width: 400px;
+        max-width: 15rem;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        flex-direction: column;
+
 
         .name-wrapper {
             display: flex;
-            flex-direction: column;
+        }
+
+        #userName{
+            flex: 0 0 70%;
+        }
+
+        label{
+            width: 100%;
+            text-align: center;
         }
 
         #btn {
-            color: white;
-            background-color: black;
+            color: black;
+            background-color: yellow;
             height: 2rem;
+            flex: 0 0 30%;
         }
     }
 }
@@ -34,5 +42,6 @@
 }
 
 .dark{
-
+    background-color: black;
+    color: white;
 }
