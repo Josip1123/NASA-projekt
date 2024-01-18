@@ -28,7 +28,7 @@ function checkName() {
 function getName() {
     const yourName = userInput.value;
     welcomeText.textContent = `Welcome ${
-        yourName.charAt(0).toUpperCase() + yourName.slice(1)
+        yourName.charAt(0).toUpperCase() + yourName.slice(1).toLowerCase()
     } !`; //tar input value och använder den för velkomst text, capitalizing bara först bokstav
     userInput.value = ""; //rensar fältet efteråt
     disableBtn(); //efter vi raderar input field btn är fortfarande enabled trots tom
