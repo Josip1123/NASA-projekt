@@ -27,7 +27,9 @@ function checkName() {
 
 function getName() {
     const yourName = userInput.value;
-    welcomeText.textContent = `Welcome ${yourName.charAt(0).toUpperCase()+yourName.slice(1)} !`; //tar input value och använder den för velkomst text, capitalizing bara först bokstav
+    welcomeText.textContent = `Welcome ${
+        yourName.charAt(0).toUpperCase() + yourName.slice(1)
+    } !`; //tar input value och använder den för velkomst text, capitalizing bara först bokstav
     userInput.value = ""; //rensar fältet efteråt
     disableBtn(); //efter vi raderar input field btn är fortfarande enabled trots tom
 }
@@ -36,9 +38,9 @@ userInput.addEventListener("input", checkName); //funktion kollar vid varje impu
 userNameSubmitBtn.addEventListener("click", getName);
 
 //litet funktion on keydown, som aktiverar submit name button om user trycker enter istället
-userInput.addEventListener("keydown", (event) => {
-    if (event.code === "Enter") {
-        event.preventDefault();
+userInput.addEventListener("keydown", (pressEnter) => {
+    if (pressEnter.code === "Enter") {
+        pressEnter.preventDefault();
         userNameSubmitBtn.click();
         userInput.blur();
     }
