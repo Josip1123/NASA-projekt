@@ -2,7 +2,10 @@ const darkModeBtn = document.querySelector(".dark_mode_button");
 const darkTheme = localStorage.getItem("theme");
 const darkModeBtnIcon = document.querySelector(".theme_icon");
 
-if (darkTheme) document.body.classList.add("dark");
+if (darkTheme) {
+    document.body.classList.add("dark");
+    darkModeBtnIcon.textContent = "light_mode";
+} 
 
 darkModeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
