@@ -1,6 +1,8 @@
 @import "reset";
 
-
+.dark_mode_button{
+    all: unset;
+}
 .wrapper {
     margin: 0 auto;
     max-width: 1200px;
@@ -44,4 +46,14 @@
 .dark{
     background-color: black;
     color: white;
+}
+
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
 }
