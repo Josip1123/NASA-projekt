@@ -22,10 +22,21 @@ video {
   all: unset;
 }
 
+header {
+  z-index: 99;
+}
+
 .wrapper {
   margin: 0 auto;
   max-width: 1200px;
   height: 100vh;
+}
+.wrapper .hero {
+  height: 70vh;
+  border-radius: 2rem;
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
 }
 .wrapper .username-submit {
   margin: 0 auto;
