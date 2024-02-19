@@ -2,43 +2,48 @@
 
 .dark_mode_button {
     all: unset;
-}
-
-header {
-    z-index: 99;
+    cursor: pointer;
 }
 
 .wrapper {
-    margin: 0 auto;
-    max-width: 1200px;
-    height: 100vh;
-    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     .username-submit {
-        margin: 0 auto;
-        max-width: 15rem;
+        width: 100%;
         display: flex;
         flex-direction: column;
-
-
-        .name-wrapper {
-            display: flex;
-        }
-
-        #userName {
-            flex: 0 0 70%;
-        }
+        align-items: center;
 
         label {
-            width: 100%;
             text-align: center;
+            max-width: 20ch;
+            margin-bottom: 1rem;
+            font-size: 2rem;
         }
 
-        #btn {
-            color: black;
-            background-color: yellow;
-            height: 2rem;
-            flex: 0 0 30%;
+        input {
+            height: 3rem;
         }
+    }
+
+    .welcome {
+        margin: 0 auto;
+        max-width: 25ch;
+        white-space: pre-line;
+        text-align: center;
+    }
+    .main-content{
+        width: 100%;
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
     }
 }
 
@@ -63,7 +68,27 @@ header {
         'opsz'24
 }
 
+.theme_icon {
+    font-size: 3rem;
+}
 
-.hidden{
+
+.hidden {
     display: none;
+}
+
+input,
+button {
+    all: unset;
+    border: solid .0625rem black;
+    border-radius: 0.2rem;
+    text-align: center;
+    margin: .5rem;
+    width: 80%;
+    cursor: pointer;
+    height: 2rem;
+}
+
+input{
+    cursor: auto;
 }

@@ -20,38 +20,44 @@ video {
 
 .dark_mode_button {
   all: unset;
-}
-
-header {
-  z-index: 99;
+  cursor: pointer;
 }
 
 .wrapper {
-  margin: 0 auto;
-  max-width: 1200px;
-  height: 100vh;
-}
-.wrapper .username-submit {
-  margin: 0 auto;
-  max-width: 15rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
-.wrapper .username-submit .name-wrapper {
+.wrapper .username-submit {
+  width: 100%;
   display: flex;
-}
-.wrapper .username-submit #userName {
-  flex: 0 0 70%;
+  flex-direction: column;
+  align-items: center;
 }
 .wrapper .username-submit label {
-  width: 100%;
+  text-align: center;
+  max-width: 20ch;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+.wrapper .username-submit input {
+  height: 3rem;
+}
+.wrapper .welcome {
+  margin: 0 auto;
+  max-width: 25ch;
+  white-space: pre-line;
   text-align: center;
 }
-.wrapper .username-submit #btn {
-  color: black;
-  background-color: yellow;
-  height: 2rem;
-  flex: 0 0 30%;
+.wrapper .main-content {
+  width: 100%;
+}
+.wrapper .main-content .btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .disabled {
@@ -69,6 +75,26 @@ header {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 
+.theme_icon {
+  font-size: 3rem;
+}
+
 .hidden {
   display: none;
+}
+
+input,
+button {
+  all: unset;
+  border: solid 0.0625rem black;
+  border-radius: 0.2rem;
+  text-align: center;
+  margin: 0.5rem;
+  width: 80%;
+  cursor: pointer;
+  height: 2rem;
+}
+
+input {
+  cursor: auto;
 }/*# sourceMappingURL=styles.css.map */

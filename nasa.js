@@ -10,11 +10,11 @@ const currentDate =
     ("0" + todayDate.getDate()).slice(-2);
 
 async function getRoverImg(rover, date) {
-    let nasaApi = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${date}&camera=PANCAM&api_key=IpEsZxZCFRfdnid2KwftbKCDTtaFhjKtadTk0HzD`;
+    let nasaApi = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${date}&api_key=IpEsZxZCFRfdnid2KwftbKCDTtaFhjKtadTk0HzD`;
 
     try {
-        let i = 0;
         const response = await fetch(nasaApi);
+        console.log(response);
 
         if (!response.ok)
             throw new Error(
@@ -23,20 +23,29 @@ async function getRoverImg(rover, date) {
 
         const responseJsoned = await response.json();
         const images = responseJsoned.photos.map((photo) => photo.img_src);
+        console.log(images);
 
         const cycleImgBtn = document.querySelector(".cycle-img-btn");
-        if (images.length < 2) cycleImgBtn.disabled = true;
+        cycleImgBtn.classList.remove("hidden");
 
-        const imgContainer = document.querySelector(".opportunity-camera-feed");
+        if (images.length < 2) {
+            cycleImgBtn.disabled = true;
+            cycleImgBtn.textContent = `No more images`;
+        } else {
+            cycleImgBtn.disabled = false;
+            cycleImgBtn.textContent = `Cycle images`;
+        }
 
+        const imgContainer = document.querySelector(".camera-feed");
+        let i = 0;
         imgContainer.src = images[0];
 
         cycleImgBtn.addEventListener("click", () => {
             imgContainer.src = images[++i % images.length];
         });
     } catch (error) {
-        console.log(error);
         alert(error);
+        console.log(error);
     }
 }
 
@@ -51,8 +60,8 @@ async function getMaxDate(rover) {
         console.log(responseJsoned);
         return responseJsoned.photo_manifest.max_date;
     } catch (error) {
-        console.log(error);
         alert(error);
+        console.log(error);
     }
 }
 
@@ -61,9 +70,16 @@ async function main(rover) {
     console.log(maxDate);
     await getRoverImg(rover, maxDate);
     if (currentDate !== maxDate)
-        console.log(
-            `no available pictures from ${currentDate}, showing last available pictures from ${maxDate} 🙃`
-        );
+        document.querySelector(
+            ".error-msg"
+        ).textContent = `No available pictures from today, showing last available pictures from ${maxDate}`;
 }
 
-window.onload = main("opportunity");
+const selectRoverBtns = document.querySelectorAll(".select-rover-btn");
+
+selectRoverBtns.forEach((selectRoverBtn) => {
+    selectRoverBtn.addEventListener("click", () => {
+        const roverName = selectRoverBtn.textContent;
+        main(roverName);
+    });
+});

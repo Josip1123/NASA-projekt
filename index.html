@@ -19,45 +19,42 @@
             </button>
         </header>
         <div class="wrapper">
-            <div class="welcome-user-wrapper">
-                <form class="username-submit" action="">
-                    <label for="userName"> Whats your name? </label>
-                    <div class="name-wrapper">
-                        <input
-                            type="text"
-                            id="userName"
-                            value=""
-                            placeholder="Type here"
-                        />
-                        <button
-                            type="button"
-                            id="btn"
-                            name="btn"
-                            value="Submit"
-                            class="disabled"
-                            disabled
-                        >
-                            <!-- button ska vara disabled från början och sen med JS ska man ädra beroende på string (name) lenght -->
-                            Submit
-                        </button>
-                    </div>
-                </form>
-                <h2 class="welcome"></h2>
-            </div>
+            <form class="username-submit" action="">
+                <label for="userName"> Welcome to my NASA rovers project whats your name? </label>
+                <input
+                    type="text"
+                    id="userName"
+                    value=""
+                    placeholder="Type here"
+                />
+                <button
+                    type="button"
+                    id="btn"
+                    name="btn"
+                    value="Submit"
+                    class="disabled"
+                    disabled
+                >
+                    <!-- button ska vara disabled från början och sen med JS ska man ädra beroende på string (name) lenght -->
+                    Submit
+                </button>
+            </form>
+            <h2 class="welcome"></h2>
+
             <section class="main-content">
-                <article class="opportunity">
-                    <button id="test" class="cycle-img-btn">Cycle Images</button>
+                <div class="btn-container">
+                    <button class="select-rover-btn">Curiosity</button>
+                    <button class="select-rover-btn">Opportunity</button>
+                    <button class="select-rover-btn">Spirit</button>
+                </div>
+                <article class="rover-img-container">
+                    <img src="" class="camera-feed" />
                     <p class="error-msg"></p>
-                    <img src="" alt="" class="opportunity-camera-feed" />
-                </article>
-                <article class="curiosity">
-                    <img class="curiosity-camera-feed" src="" alt="" />
-                </article>
-                <article class="spirit">
-                    <img src="" alt="" class="spirit-camera-feed" />
+                    <button class="cycle-img-btn hidden">Cycle images</button>
                 </article>
             </section>
         </div>
+
         <script src="name.js" type="text/javascript"></script>
         <script src="dark_mode.js" type="text/javascript"></script>
         <script src="nasa.js" type="text/javascript"></script>
