@@ -66,4 +66,4 @@ async function main(rover) {
         );
 }
 
-window.onload = main("curiosity");
+window.onload = main("opportunity");
