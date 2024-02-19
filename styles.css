@@ -29,6 +29,9 @@ video {
   flex-direction: column;
   align-items: center;
 }
+.wrapper h1 {
+  text-align: center;
+}
 .wrapper .username-submit {
   width: 100%;
   display: flex;
