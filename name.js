@@ -33,6 +33,7 @@ function getName() {
     userInput.value = ""; //rensar fältet efteråt
     disableBtn(); //efter vi raderar input field btn är fortfarande enabled trots tom
 }
+
 userInput.addEventListener("input", checkName); //funktion kollar vid varje imput om lenghten blev > 3
 
 userNameSubmitBtn.addEventListener("click", getName);

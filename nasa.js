@@ -9,29 +9,30 @@ const currentDate =
     "-" +
     ("0" + todayDate.getDate()).slice(-2);
 
-async function opportunity(date) {
-    let opportunityRover = `https://api.nasa.gov/mars-photos/api/v1/rovers/opportunity/photos?earth_date=${date}&camera=PANCAM&api_key=IpEsZxZCFRfdnid2KwftbKCDTtaFhjKtadTk0HzD`;
+async function getRoverImg(rover, date) {
+    let nasaApi = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${date}&camera=PANCAM&api_key=IpEsZxZCFRfdnid2KwftbKCDTtaFhjKtadTk0HzD`;
 
     try {
         let i = 0;
-        const response = await fetch(opportunityRover);
+        const response = await fetch(nasaApi);
 
         if (!response.ok)
-            throw new Error(`Something went wrong with fetching opportunity photos`);
+            throw new Error(
+                `Something went wrong with fetching ${rover} photos`
+            );
 
         const responseJsoned = await response.json();
         const images = responseJsoned.photos.map((photo) => photo.img_src);
 
-        const cycleImgBtn = document.querySelector(".previous-img");
+        const cycleImgBtn = document.querySelector(".cycle-img-btn");
         if (images.length < 2) cycleImgBtn.disabled = true;
 
-        const opportunityElement = document.querySelector(
-            ".opportunity-camera-feed"
-        );
-        opportunityElement.src = images[0];
-        
+        const imgContainer = document.querySelector(".opportunity-camera-feed");
+
+        imgContainer.src = images[0];
+
         cycleImgBtn.addEventListener("click", () => {
-            opportunityElement.src = images[++i % images.length];
+            imgContainer.src = images[++i % images.length];
         });
     } catch (error) {
         console.log(error);
@@ -39,15 +40,15 @@ async function opportunity(date) {
     }
 }
 
-async function getOpportunityMaxDate() {
+async function getMaxDate(rover) {
     try {
-        const manifest =
-            "https://api.nasa.gov/mars-photos/api/v1/manifests/opportunity/?api_key=IpEsZxZCFRfdnid2KwftbKCDTtaFhjKtadTk0HzD";
+        const manifest = `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}/?api_key=IpEsZxZCFRfdnid2KwftbKCDTtaFhjKtadTk0HzD`;
 
         const response = await fetch(manifest);
         if (!response.ok)
-            throw new Error(`Something went wrong with fetching the date`);
+            throw new Error(`Something went wrong with fetching ${rover} date`);
         const responseJsoned = await response.json();
+        console.log(responseJsoned);
         return responseJsoned.photo_manifest.max_date;
     } catch (error) {
         console.log(error);
@@ -55,13 +56,14 @@ async function getOpportunityMaxDate() {
     }
 }
 
-async function main() {
-    const opportunityMaxDate = await getOpportunityMaxDate();
-    await opportunity(opportunityMaxDate);
-    if (currentDate !== opportunityMaxDate)
+async function main(rover) {
+    const maxDate = await getMaxDate(rover);
+    console.log(maxDate);
+    await getRoverImg(rover, maxDate);
+    if (currentDate !== maxDate)
         console.log(
-            `no available pictures from ${currentDate}, showing last available pictures from ${opportunityMaxDate} 🙃`
+            `no available pictures from ${currentDate}, showing last available pictures from ${maxDate} 🙃`
         );
 }
 
-main();
+window.onload = main("curiosity");
