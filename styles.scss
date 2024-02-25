@@ -10,9 +10,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    h1{
+
+    h1 {
         text-align: center;
+        margin: 1rem;
     }
+
     .username-submit {
         width: 100%;
         display: flex;
@@ -22,12 +25,17 @@
         label {
             text-align: center;
             max-width: 20ch;
-            margin-bottom: 1rem;
-            font-size: 2rem;
+            margin: 2rem 0 0.5rem 0;
+            font-size: 1.8rem;
         }
 
         input {
+            all: unset;
             height: 3rem;
+            border-bottom: solid .125rem black;
+            text-align: center;
+            width: 100%;
+            font-size: 1.4rem;
         }
     }
 
@@ -37,15 +45,38 @@
         white-space: pre-line;
         text-align: center;
     }
-    .main-content{
+
+    .main-content {
         width: 100%;
+
         .btn-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 100%;
+            margin: 2rem 0;
+            .select-rover-btn{
+                width: 7rem;
+                height: 2rem;
+            }
+            &>* {
+                margin: 0.5rem 0;
+            }
         }
 
+        .rover-img-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+            .camera-feed{
+                max-width: 400px;
+            }
+            .error-msg{
+                max-width: 50ch;
+                text-align: center;
+            }
+        }
     }
 }
 
@@ -55,7 +86,7 @@
     opacity: 0.5;
 }
 
-.dark {
+.dark_mode_style {
     background-color: black;
     color: white;
 }
@@ -72,25 +103,10 @@
 
 .theme_icon {
     font-size: 3rem;
+    margin: 1rem;
 }
 
 
 .hidden {
     display: none;
-}
-
-input,
-button {
-    all: unset;
-    border: solid .0625rem black;
-    border-radius: 0.2rem;
-    text-align: center;
-    margin: .5rem;
-    width: 80%;
-    cursor: pointer;
-    height: 2rem;
-}
-
-input{
-    cursor: auto;
 }

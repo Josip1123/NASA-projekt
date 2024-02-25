@@ -27,6 +27,7 @@
                     id="userName"
                     value=""
                     placeholder="Type here"
+                    maxlength="20"
                 />
                 <button
                     type="button"
@@ -42,15 +43,15 @@
             </form>
             <h2 class="welcome"></h2>
 
-            <section class="main-content">
+            <section class="main-content hidden">
                 <div class="btn-container">
                     <button class="select-rover-btn">Curiosity</button>
                     <button class="select-rover-btn">Opportunity</button>
                     <button class="select-rover-btn">Spirit</button>
                 </div>
                 <article class="rover-img-container">
-                    <img src="" class="camera-feed" />
                     <p class="error-msg"></p>
+                    <img src="" class="camera-feed" />
                     <button class="cycle-img-btn hidden">Cycle images</button>
                 </article>
             </section>

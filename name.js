@@ -5,7 +5,7 @@ const userNameSubmitBtn = document.querySelector("#btn");
 const userInput = document.querySelector("#userName");
 const welcomeText = document.querySelector(".welcome");
 
-//funktioner som jag kan använda flera gånger, DRY
+// funktioner som ska användas längre när, som aktiverar eller deaktiverar knappen
 function enableBtn() {
     userNameSubmitBtn.disabled = false;
     userNameSubmitBtn.classList.remove("disabled");
@@ -27,16 +27,17 @@ function checkName() {
 
 function getName() {
     const yourName = userInput.value;
-    welcomeText.textContent = `Welcome ${
+    welcomeText.textContent = `Hey ${
         yourName.charAt(0).toUpperCase() + yourName.slice(1).toLowerCase()
     }, \n choose the rover below!`; //tar input value och använder den för velkomst text, capitalizing bara först bokstav
     userInput.value = ""; //rensar fältet efteråt
     disableBtn(); //efter vi raderar input field btn är fortfarande enabled trots tom
+    document.querySelector(".main-content").classList.remove("hidden");
 }
 
 userInput.addEventListener("input", checkName); //funktion kollar vid varje imput om lenghten blev > 3
 
-userNameSubmitBtn.addEventListener("click", getName);
+userNameSubmitBtn.addEventListener("click", getName); // getName funktion blir kallad vid click on submit knapp
 
 //litet funktion on keydown, som aktiverar submit name button om user trycker enter istället
 userInput.addEventListener("keydown", (pressEnter) => {
@@ -46,3 +47,6 @@ userInput.addEventListener("keydown", (pressEnter) => {
         userInput.blur();
     }
 });
+
+
+
