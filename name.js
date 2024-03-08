@@ -33,7 +33,9 @@ function getName() {
     userInput.value = ""; //rensar fältet efteråt
     disableBtn(); //efter vi raderar input field btn är fortfarande enabled trots tom då vill jag sätta disabled igen
     document.querySelector(".main-content").classList.remove("hidden");
-    document.querySelector("#choose-rovers-btn-container").scrollIntoView({behavior: 'smooth'});
+    document
+        .querySelector("#welcome-msg")
+        .scrollIntoView({ behavior: "smooth" });
 }
 
 userInput.addEventListener("input", checkName); //funktion kollar vid varje imput om lenghten blev > 3
@@ -48,6 +50,3 @@ userInput.addEventListener("keydown", (pressEnter) => {
         userInput.blur();
     }
 });
-
-
-
