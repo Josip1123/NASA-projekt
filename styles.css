@@ -123,7 +123,7 @@ button {
   color: #c5c3c6;
 }
 .dark_mode_style .msg {
-  color: #c5c3c6;
+  color: #c5c3c6 !important;
 }
 .dark_mode_style .welcome {
   color: #c5c3c6;
