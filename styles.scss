@@ -1,23 +1,35 @@
 @import "reset";
+@import "variables";
 
-.dark_mode_button {
+body {
+    font-family: sans-serif;
+}
+
+
+button {
     all: unset;
-    cursor: pointer;
+    text-align: center;
+    padding: 0.5rem;
+    margin: 1rem;
+    font-size: 1rem;
+    color: black;
+    border-radius: 10px;
+    background-color: $main-color-light;
+    border: 2px solid black;
 }
 
 .wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
     h1 {
         text-align: center;
+        font-size: 2rem;
         margin: 1rem;
+        max-width: 20ch;
+        color: $secondary-color-light;
+
     }
 
     .username-submit {
-        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -26,24 +38,24 @@
             text-align: center;
             max-width: 20ch;
             margin: 2rem 0 0.5rem 0;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
         }
 
         input {
             all: unset;
             height: 3rem;
-            border-bottom: solid .125rem black;
+            border-bottom: solid .14rem black;
             text-align: center;
-            width: 100%;
-            font-size: 1.4rem;
+            font-size: 1.1rem;
         }
     }
 
     .welcome {
-        margin: 0 auto;
+        margin: 2rem auto;
         max-width: 25ch;
         white-space: pre-line;
         text-align: center;
+        color: $secondary-color-light;
     }
 
     .main-content {
@@ -54,10 +66,12 @@
             flex-direction: column;
             align-items: center;
             margin: 2rem 0;
-            .select-rover-btn{
+
+            .select-rover-btn {
                 width: 7rem;
                 height: 2rem;
             }
+
             &>* {
                 margin: 0.5rem 0;
             }
@@ -69,26 +83,59 @@
             align-items: center;
             justify-content: center;
             margin: 2rem 0;
-            .camera-feed{
-                max-width: 400px;
+
+            .camera-feed {
+                min-width: 25rem;
+                min-height: 25rem;
             }
-            .error-msg{
-                max-width: 50ch;
+
+            .msg {
+                max-width: 35ch;
                 text-align: center;
+                color: $secondary-color-light;
+                font-size: 1.2rem;
+                margin-top: 2rem;
             }
         }
     }
 }
 
 .disabled {
-    background-color: grey;
     color: black;
     opacity: 0.5;
 }
 
 .dark_mode_style {
     background-color: black;
-    color: white;
+    color: $main-color-darkmode;
+
+    input {
+        background-color: black;
+    }
+
+    button {
+        background-color: $secondary-color-darkmode;
+    }
+
+    h1 {
+        color: $main-color-darkmode;
+    }
+
+    label {
+        color: $main-color-darkmode;
+    }
+
+    .msg {
+        color: $main-color-darkmode;
+    }
+
+    .welcome {
+        color: $main-color-darkmode;
+    }
+
+    .dark_mode_button {
+        color: rgb(211, 211, 114);
+    }
 }
 
 
@@ -109,4 +156,10 @@
 
 .hidden {
     display: none;
+}
+
+.dark_mode_button {
+    all: unset;
+    cursor: pointer;
+    background-color: transparent !important;
 }

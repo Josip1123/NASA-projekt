@@ -71,7 +71,7 @@ async function main(rover) {
     await getRoverImg(rover, maxDate);
     if (currentDate !== maxDate)
         document.querySelector(
-            ".error-msg"
+            ".msg"
         ).textContent = `No available pictures from today, showing last available pictures from ${maxDate}`;
 }
 
@@ -81,5 +81,6 @@ selectRoverBtns.forEach((selectRoverBtn) => {
     selectRoverBtn.addEventListener("click", () => {
         const roverName = selectRoverBtn.textContent;
         main(roverName);
+        document.querySelector("#images-from-rovers").scrollIntoView({behavior: 'smooth'});
     });
 });

@@ -18,23 +18,30 @@ video {
   max-width: 100%;
 }
 
-.dark_mode_button {
-  all: unset;
-  cursor: pointer;
+body {
+  font-family: sans-serif;
 }
 
-.wrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+button {
+  all: unset;
+  text-align: center;
+  padding: 0.5rem;
+  margin: 1rem;
+  font-size: 1rem;
+  color: black;
+  border-radius: 10px;
+  background-color: #b4c5e4;
+  border: 2px solid black;
 }
+
 .wrapper h1 {
   text-align: center;
+  font-size: 2rem;
   margin: 1rem;
+  max-width: 20ch;
+  color: #7851a9;
 }
 .wrapper .username-submit {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,21 +50,21 @@ video {
   text-align: center;
   max-width: 20ch;
   margin: 2rem 0 0.5rem 0;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 .wrapper .username-submit input {
   all: unset;
   height: 3rem;
-  border-bottom: solid 0.125rem black;
+  border-bottom: solid 0.14rem black;
   text-align: center;
-  width: 100%;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
 }
 .wrapper .welcome {
-  margin: 0 auto;
+  margin: 2rem auto;
   max-width: 25ch;
   white-space: pre-line;
   text-align: center;
+  color: #7851a9;
 }
 .wrapper .main-content {
   width: 100%;
@@ -83,22 +90,46 @@ video {
   margin: 2rem 0;
 }
 .wrapper .main-content .rover-img-container .camera-feed {
-  max-width: 400px;
+  min-width: 25rem;
+  min-height: 25rem;
 }
-.wrapper .main-content .rover-img-container .error-msg {
-  max-width: 50ch;
+.wrapper .main-content .rover-img-container .msg {
+  max-width: 35ch;
   text-align: center;
+  color: #7851a9;
+  font-size: 1.2rem;
+  margin-top: 2rem;
 }
 
 .disabled {
-  background-color: grey;
   color: black;
   opacity: 0.5;
 }
 
 .dark_mode_style {
   background-color: black;
-  color: white;
+  color: #c5c3c6;
+}
+.dark_mode_style input {
+  background-color: black;
+}
+.dark_mode_style button {
+  background-color: #1985a1;
+}
+.dark_mode_style h1 {
+  color: #c5c3c6;
+}
+.dark_mode_style label {
+  color: #c5c3c6;
+}
+.dark_mode_style .msg {
+  color: #c5c3c6;
+}
+.dark_mode_style .welcome {
+  color: #c5c3c6;
+}
+.dark_mode_style .dark_mode_button {
+  color: rgb(211, 211, 114);
 }
 
 .material-symbols-outlined {
@@ -112,4 +143,10 @@ video {
 
 .hidden {
   display: none;
+}
+
+.dark_mode_button {
+  all: unset;
+  cursor: pointer;
+  background-color: transparent !important;
 }/*# sourceMappingURL=styles.css.map */
