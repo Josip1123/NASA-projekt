@@ -31,8 +31,9 @@ function getName() {
         yourName.charAt(0).toUpperCase() + yourName.slice(1).toLowerCase()
     }, \n choose the rover below!`; //tar input value och använder den för velkomst text, capitalizing bara först bokstav
     userInput.value = ""; //rensar fältet efteråt
-    disableBtn(); //efter vi raderar input field btn är fortfarande enabled trots tom
+    disableBtn(); //efter vi raderar input field btn är fortfarande enabled trots tom då vill jag sätta disabled igen
     document.querySelector(".main-content").classList.remove("hidden");
+    document.querySelector("#choose-rovers-btn-container").scrollIntoView({behavior: 'smooth'});
 }
 
 userInput.addEventListener("input", checkName); //funktion kollar vid varje imput om lenghten blev > 3
