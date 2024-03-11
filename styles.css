@@ -32,6 +32,7 @@ button {
   border-radius: 10px;
   background-color: #b4c5e4;
   border: 2px solid black;
+  cursor: pointer;
 }
 
 header {
@@ -153,8 +154,8 @@ header {
   margin: 2rem 0;
 }
 .wrapper .main-content .rover-img-container .camera-feed {
-  min-width: 25rem;
-  min-height: 25rem;
+  min-width: 22.5rem;
+  min-height: 22.5rem;
 }
 .wrapper .main-content .rover-img-container .msg {
   max-width: 35ch;

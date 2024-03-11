@@ -19,13 +19,16 @@ button {
     border-radius: 10px;
     background-color: $main-color-light;
     border: 2px solid black;
+    cursor: pointer;
 }
 
-header{
+header {
     margin: 0 auto;
+
     @media screen and (min-width: 768px) {
         max-width: 768px;
     }
+
     @media screen and (min-width: 1024px) {
         max-width: 1024px;
     }
@@ -33,24 +36,29 @@ header{
 
 .wrapper {
     margin: 0 auto;
+
     @media screen and (min-width: 1024px) {
         max-width: 1024px;
     }
-    .username-submit-container{
+
+    .username-submit-container {
         @media screen and (min-width: 1024px) {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-top: 5rem;
-            h1{
+
+            h1 {
                 font-size: 2.5rem;
                 flex: 0 0 50%;
             }
-            .username-submit{
+
+            .username-submit {
                 flex: 0 0 50%;
             }
         }
     }
+
     h1 {
         text-align: center;
         font-size: 2rem;
@@ -88,10 +96,12 @@ header{
         text-align: center;
         color: $secondary-color-light;
         font-size: 1.6rem;
+
         @media screen and (min-width: 768px) {
             margin-top: 4rem;
             font-size: 2rem;
         }
+
         @media screen and (min-width: 1024px) {
             margin-top: 6rem;
             font-size: 3rem;
@@ -102,11 +112,13 @@ header{
         @media screen and (min-width: 1024px) {
             margin-top: 4rem;
         }
+
         .btn-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin: 2rem 0;
+
             @media screen and (min-width: 768px) {
                 flex-direction: row;
                 justify-content: center;
@@ -115,6 +127,7 @@ header{
             .select-rover-btn {
                 width: 7rem;
                 height: 2rem;
+
                 @media screen and (min-width: 768px) {
                     margin: 0.5rem;
                 }
@@ -133,9 +146,8 @@ header{
             margin: 2rem 0;
 
             .camera-feed {
-                min-width: 25rem;
-                min-height: 25rem;
-                //efterom jag tyckte att vissa bilder kan bli lite för små
+                min-width: 22.5rem;
+                min-height: 22.5rem;
             }
 
             .msg {
@@ -160,7 +172,7 @@ header{
 
     input {
         background-color: black;
-        border-bottom-color: white!important;
+        border-bottom-color: white !important;
     }
 
     button {
@@ -176,7 +188,7 @@ header{
     }
 
     .msg {
-        color: $main-color-darkmode!important;
+        color: $main-color-darkmode !important;
     }
 
     .welcome {
@@ -214,6 +226,6 @@ header{
     background-color: transparent !important;
 }
 
-.grey-out{
+.grey-out {
     opacity: 30%;
 }
