@@ -36,6 +36,7 @@ function getName() {
     document
         .querySelector("#welcome-msg")
         .scrollIntoView({ behavior: "smooth" });
+        if (welcomeText.textContent) document.querySelector(".username-submit-container").classList.add("grey-out");
 }
 
 userInput.addEventListener("input", checkName); //funktion kollar vid varje imput om lenghten blev > 3

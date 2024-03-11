@@ -72,7 +72,7 @@ async function main(rover) {
     if (currentDate !== maxDate)
         document.querySelector(
             ".msg"
-        ).textContent = `No available pictures from today, showing last available pictures from ${maxDate}`;
+        ).textContent = `No available images from today, showing last available pictures from ${maxDate}. Use the button below to cycle through images`;
 }
 
 const selectRoverBtns = document.querySelectorAll(".select-rover-btn");

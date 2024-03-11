@@ -19,30 +19,32 @@
             </button>
         </header>
         <div class="wrapper">
-            <h1>Welcome to my NASA rovers project</h1>
-            <form class="username-submit" action="">
-                <label for="userName"> Whats your name? </label>
-                <input
-                    type="text"
-                    id="userName"
-                    value=""
-                    placeholder="Type here"
-                    maxlength="20"
-                />
-                <button
-                    type="button"
-                    id="btn"
-                    name="btn"
-                    value="Submit"
-                    class="disabled"
-                    disabled
-                >
-                    <!-- button ska vara disabled från början och sen med JS ska man ädra beroende på string (name) lenght -->
-                    Submit
-                </button>
-            </form>
+            <section class="username-submit-container">
+                <h1>Welcome to my NASA rovers project</h1>
+                <form class="username-submit" action="">
+                    <label for="userName"> Whats your name? </label>
+                    <input
+                        type="text"
+                        id="userName"
+                        value=""
+                        placeholder="Type here"
+                        maxlength="20"
+                    />
+                    <button
+                        type="button"
+                        id="btn"
+                        name="btn"
+                        value="Submit"
+                        class="disabled"
+                        disabled
+                    >
+                        <!-- button ska vara disabled från början och sen med JS ska man ädra beroende på string (name) lenght -->
+                        Submit
+                    </button>
+                </form>
+            </section>
+            
             <h2 class="welcome" id="welcome-msg"></h2>
-
             <section class="main-content hidden">
                 <div class="btn-container">
                     <button class="select-rover-btn">Curiosity</button>

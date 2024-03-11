@@ -18,14 +18,43 @@ button {
     border: 2px solid black;
 }
 
-.wrapper {
+header{
+    @media screen and (min-width: 768px) {
+        max-width: 768px;
+        margin: 0 auto;
+    }
+    @media screen and (min-width: 1024px) {
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+}
 
+.wrapper {
+    @media screen and (min-width: 1024px) {
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+    .username-submit-container{
+        @media screen and (min-width: 1024px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5rem;
+            h1{
+                font-size: 2.5rem;
+                flex: 0 0 50%;
+            }
+            .username-submit{
+                flex: 0 0 50%;
+            }
+        }
+    }
     h1 {
         text-align: center;
         font-size: 2rem;
-        margin: 1rem;
         max-width: 20ch;
         color: $secondary-color-light;
+        margin: 2rem auto;
 
     }
 
@@ -56,20 +85,36 @@ button {
         white-space: pre-line;
         text-align: center;
         color: $secondary-color-light;
+        @media screen and (min-width: 768px) {
+            margin-top: 4rem;
+            font-size: 2rem;
+        }
+        @media screen and (min-width: 1024px) {
+            margin-top: 6rem;
+            font-size: 3rem;
+        }
     }
 
     .main-content {
-        width: 100%;
-
+        @media screen and (min-width: 1024px) {
+            margin-top: 4rem;
+        }
         .btn-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin: 2rem 0;
+            @media screen and (min-width: 768px) {
+                flex-direction: row;
+                justify-content: center;
+            }
 
             .select-rover-btn {
                 width: 7rem;
                 height: 2rem;
+                @media screen and (min-width: 768px) {
+                    margin: 0.5rem;
+                }
             }
 
             &>* {
@@ -87,6 +132,7 @@ button {
             .camera-feed {
                 min-width: 25rem;
                 min-height: 25rem;
+                //efterom jag tyckte att vissa bilder kan bli lite för små
             }
 
             .msg {
@@ -111,6 +157,7 @@ button {
 
     input {
         background-color: black;
+        border-bottom-color: white!important;
     }
 
     button {
@@ -162,4 +209,9 @@ button {
     all: unset;
     cursor: pointer;
     background-color: transparent !important;
+}
+
+.grey-out{
+    opacity: 30%;
+    color: gray;
 }
