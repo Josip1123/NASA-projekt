@@ -29,14 +29,15 @@ function getName() {
     const yourName = userInput.value;
     welcomeText.textContent = `Hey ${
         yourName.charAt(0).toUpperCase() + yourName.slice(1).toLowerCase()
-    }, \n choose the rover below!`; //tar input value och använder den för velkomst text, capitalizing bara först bokstav
+    }, \n choose the rover below!`; //tar input value och använder den som velkomst text, capitalizing bara första bokstav
     userInput.value = ""; //rensar fältet efteråt
-    disableBtn(); //efter vi raderar input field btn är fortfarande enabled trots tom då vill jag sätta disabled igen
-    document.querySelector(".main-content").classList.remove("hidden");
+    disableBtn(); //efter vi raderar input field btn är fortfarande enabled trots tom - då vill jag sätta disabled igen
+    document.querySelector(".main-content").classList.remove("hidden"); //välj rover knapparna vissas bara om man skriver in namnet
     document
         .querySelector("#welcome-msg")
-        .scrollIntoView({ behavior: "smooth" });
-        if (welcomeText.textContent) document.querySelector(".username-submit-container").classList.add("grey-out");
+        .scrollIntoView({ behavior: "smooth" }); //tyckte det var smidigt att sidan flyttar sig till knapparna som dyker upp
+    if (welcomeText.textContent) document.querySelector(".username-submit-container").classList.add("grey-out");
+    // jag lekte lite och lagt lite oppacity till "username-submit" section
 }
 
 userInput.addEventListener("input", checkName); //funktion kollar vid varje imput om lenghten blev > 3

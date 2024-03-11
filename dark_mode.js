@@ -17,3 +17,5 @@ darkModeBtn.addEventListener("click", () => {
         darkModeBtnIcon.textContent = "light_mode";
     }
 });
+
+// enkel dark mode men hjälp av locale storage. Sparar "theme" value i local storage , users val kvarstår även vid refresh
